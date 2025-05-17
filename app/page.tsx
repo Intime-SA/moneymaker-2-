@@ -185,7 +185,7 @@ export default function LandingPage() {
               transition={{ delay: 0.5, duration: 0.7 }}
             >
               <h2 className="text-xl font-bold mb-6 text-center">{howToStartSection.title}</h2>
-              <div className="w-full -ml-4">
+              <div className="w-full">
                  <RegistrationStepsSlider />
               </div>
             </motion.section>
