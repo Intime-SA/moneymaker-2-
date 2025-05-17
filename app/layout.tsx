@@ -112,7 +112,7 @@ export default function RootLayout({
         "script",
         "https://connect.facebook.net/en_US/fbevents.js"
       );
-      fbq("init", "1823068665215187");
+      fbq("init", "1008957628051665");
       fbq("track", "PageView");
       fbq("track", "Lead", {
         content_name: "Botón CTA",
@@ -128,7 +128,7 @@ export default function RootLayout({
         height="1"
         width="1"
         style="display: none"
-        src="https://www.facebook.com/tr?id=1823068665215187&ev=PageView&noscript=1"
+        src="https://www.facebook.com/tr?id=1008957628051665&ev=PageView&noscript=1"
     /></noscript>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
