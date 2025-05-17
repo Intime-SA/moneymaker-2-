@@ -3,6 +3,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
+import Script from 'next/script'
 
 // Configurar Montserrat
 const montserrat = Montserrat({
@@ -86,72 +87,57 @@ export default function RootLayout({
   return (
     <html lang="es" className="dark"> {/* Puedes quitar className=\"dark\" si ThemeProvider lo maneja o si prefieres tema claro por defecto */}
       <head>
-        {/* Las etiquetas <title> y <meta name="description"> se manejan ahora con el objeto metadata */}
-        {/* Las fuentes de Google Fonts anteriores se eliminan, Montserrat se carga vía next/font */}
- <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
-      fbq("init", "1008957628051665");
-      fbq("track", "PageView");
-      fbq("track", "Lead", {
-        content_name: "Botón CTA",
-        value: 0,
-        currency: "USD",
-      });
-    </script>
       </head>
       {/* Aplicamos la clase de Montserrat al body */}
       <body className={montserrat.className}> 
+        <Script
+          id="fb-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              !(function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                  n.callMethod
+                    ? n.callMethod.apply(n, arguments)
+                    : n.queue.push(arguments);
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = "2.0";
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s);
+              })(
+                window,
+                document,
+                "script",
+                "https://connect.facebook.net/en_US/fbevents.js"
+              );
+              fbq("init", "1008957628051665");
+              fbq("track", "PageView");
+              fbq("track", "Lead", {
+                content_name: "Botón CTA",
+                value: 0,
+                currency: "USD",
+              });
+            `,
+          }}
+        />
 <noscript
       ><img
         height="1"
         width="1"
-        style="display: none"
+        style={{ display: 'none' }}
         src="https://www.facebook.com/tr?id=1008957628051665&ev=PageView&noscript=1"
     /></noscript>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </ThemeProvider>
-<script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const button = document.getElementById("cta-button");
-        if (button) {
-          console.log("Botón CTA encontrado por script en index.html");
-          button.addEventListener("click", function () {
-            if (typeof window.fbq === 'function') {
-              window.fbq("track", "Lead", {
-                content_name: "Botón CTA (via index.html)",
-                value: 0,
-                currency: "USD",
-              });
-            }
-          });
-        } else {
-          console.log("No se encontró el botón CTA por script en index.html después de DOMContentLoaded");
-        }
-      });
-    </script>
       </body>
     </html>
   )
