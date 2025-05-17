@@ -15,8 +15,6 @@ import {
   ArrowRight
 } from "lucide-react";
 
-// Componentes personalizados
-import AnimatedCtaButton from "@/components/animated-cta-button";
 import { useMobileDetector } from "@/hooks/use-mobile";
 import RegistrationStepsSlider from "@/components/image-slider";
 
@@ -108,6 +106,7 @@ export default function LandingPage() {
   // Common CTA Button style, can be adjusted
   const CtaButton = ({ text, href }: { text: string; href: string; }) => (
     <motion.a
+      id="cta-button"
       href={href}
       className="bg-green-600 text-white font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-lg shadow-lg text-lg sm:text-xl border-2 border-green-500 hover:bg-green-700 hover:border-green-600 hover:scale-105 active:scale-95 transition-all duration-300 ease-in-out transform inline-flex items-center justify-center"
       whileHover={{ scale: 1.05 }}
