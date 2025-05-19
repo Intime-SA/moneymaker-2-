@@ -33,16 +33,16 @@ export default function RegistrationStepsSlider() {
     },
     {
       src: "/payment3.png",
-      alt: "Paso 2 - Accedé a tu cuenta",
-      title: "2. Accedé a tu cuenta",
-      description: "Ingresá con tus credenciales y explorá la plataforma.",
+      alt: "Paso 2 - Depositar",
+      title: "2. Deposita en la plataforma",
+      description: "Realizá un depósito de dinero en tu cuenta.",
       icon: <LogIn className="w-6 h-6 text-[#008F39]" />
     },
     {
       src: "/payment1.png",
-      alt: "Paso 3 - Jugá y Ganá",
-      title: "3. ¡Y listo! Jugá y Ganá",
-      description: "Cargá saldo, elegí tus juegos favoritos y retirá tus ganancias cuando quieras.",
+      alt: "Paso 3 - Retirar",
+      title: "3. Retirá tus ganancias.",
+      description: "Cuando quieras, retirá tus ganancias a tu cuenta.",
       icon: <CheckCircle className="w-6 h-6 text-[#008F39]" />,
     },
   ]

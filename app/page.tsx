@@ -12,7 +12,8 @@ import {
   Clock,
   Smartphone,
   Eye,
-  ArrowRight
+  ArrowRight,
+  CreditCard
 } from "lucide-react";
 
 import { useMobileDetector } from "@/hooks/use-mobile";
@@ -63,11 +64,11 @@ export default function LandingPage() {
   const whyUsSection = {
     title: "🧩 ¿Por qué elegirnos?",
     points: [
-      { text: "Cargás saldo en tu cuenta al instante", icon: <DollarSign className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
-      { text: "Retirás tus ganancias directo a tu cuenta bancaria en menos de 3 minutos", icon: <Clock className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
-      { text: "Ves todo lo que ganás y cargás en tiempo real", icon: <Eye className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
-      { text: "Sin esperar a nadie, ni hacer filas ni mandar mensajes", icon: <CheckCircle className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
-      { text: "Acceso en cualquier dispositivo", icon: <Smartphone className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
+      { text: "Cargás en tu cuenta al instante.", icon: <CreditCard className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
+      { text: "Retirás directo a tu cuenta en menos de 3 minutos.", icon: <Clock className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
+      { text: "Ves todo lo que ganás y cargás en tiempo real.", icon: <Eye className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
+      { text: "Sin esperar a nadie, ni hacer filas ni mandar mensajes.", icon: <CheckCircle className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
+      { text: "Acceso en cualquier dispositivo.", icon: <Smartphone className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
       { text: "Todo desde un solo lugar. Fácil, claro y rápido.", icon: <Check className="w-6 h-6 mr-3 text-custom-green flex-shrink-0" /> },
     ],
   };
@@ -151,9 +152,9 @@ export default function LandingPage() {
                   >
                     {item.icon}
                     {item.type === "antes" ? (
-                      <p className="text-sm text-gray-400 italic">{item.text}</p>
+                      <p className="text-xs text-gray-500 italic">{item.text}</p>
                     ) : item.type === "ahora" ? (
-                      <p className="text-sm text-custom-green font-bold">{item.text}</p>
+                      <p className="text-xl text-custom-green font-extrabold leading-tight">{item.text}</p>
                     ) : (
                       <p className="text-sm text-gray-300">{item.text}</p>
                     )}
@@ -282,9 +283,9 @@ export default function LandingPage() {
                   >
                     {item.icon}
                     {item.type === "antes" ? (
-                      <p className="text-base text-gray-400 italic">{item.text}</p>
+                      <p className="text-sm text-gray-500 italic">{item.text}</p>
                     ) : item.type === "ahora" ? (
-                      <p className="text-base text-custom-green font-bold lg:text-lg">{item.text}</p>
+                      <p className="text-2xl text-custom-green font-extrabold lg:text-3xl leading-tight">{item.text}</p>
                     ) : (
                       <p className="text-base text-gray-300">{item.text}</p>
                     )}
@@ -358,9 +359,6 @@ export default function LandingPage() {
                   alt="Formulario de Registro" 
                   className="rounded-lg shadow-lg max-w-md w-full h-auto object-contain border-2 border-gray-600"
                 />
-              </div>
-              <div className="pt-6">
-                <CtaButton text={formSection.ctaText} href={ctaLink} />
               </div>
             </div>
           </motion.section>
